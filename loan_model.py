@@ -5,13 +5,19 @@ def calculate_monthly_interest(
     principal: float,
     annual_rate: float,
     years: float,
+    monthly_payment: float = 0.0,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Calculate loan balance over time with monthly compounding interest.
+
+    If monthly_payment > 0 the balance is reduced each month by that amount
+    after interest is applied (standard amortization). The balance is clamped
+    at zero and remains there for the rest of the term.
 
     Args:
         principal: Initial loan amount in dollars.
         annual_rate: Annual interest rate as a decimal (e.g. 0.05 for 5%).
         years: Loan duration in years (supports fractional years).
+        monthly_payment: Fixed payment applied each month (default 0 = no payment).
 
     Returns:
         A tuple of (months, balances, accrued_interest) arrays where:
@@ -23,7 +29,15 @@ def calculate_monthly_interest(
     total_months = int(round(years * 12))
     months = np.arange(total_months + 1)
 
-    balances = principal * (1 + monthly_rate) ** months
+    if monthly_payment == 0.0:
+        balances = principal * (1 + monthly_rate) ** months
+    else:
+        balances = np.empty(total_months + 1)
+        balances[0] = principal
+        for i in range(1, total_months + 1):
+            new_balance = balances[i - 1] * (1 + monthly_rate) - monthly_payment
+            balances[i] = max(0.0, new_balance)
+
     accrued_interest = balances - principal
 
     return months, balances, accrued_interest
