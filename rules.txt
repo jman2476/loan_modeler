@@ -2,6 +2,7 @@ All agents running in this workspace will follow these guidelines for this proje
 
 - Make no mistakes: always follow all guidelines in this document
 - This is a python project, all code will be in python
+- Break code into functions when logical
 - Be concise: explain what you did, with minimal but precise wording. Reference line numbers
 - Use these packages: matplotlib for plotting, numpy when necessary for calculations
 - Always follow these guidelines at all times
