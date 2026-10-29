@@ -1,0 +1,7 @@
+Trial: focus_B
+Tuple: (100, 500, 100, 'focus_B')
+
+Loan A: principal=$15,000  rate=5.0%  monthly_payment=$100.00
+Loan B: principal=$10,000  rate=5.0%  monthly_payment=$500.00
+Loan C: principal=$10,000  rate=9.0%  monthly_payment=$100.00
+Term:   10.0 years
