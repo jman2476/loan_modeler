@@ -10,7 +10,7 @@ from TRIALS import TRIALS
 
 # ── Loan parameters (shared across all trials) ───────────────────────────────
 
-YEARS = 10.0
+YEARS = 20.0
 RATE_AB = 0.05      # shared rate for Loans A and B
 RATE_C = 0.09       # higher rate for Loan C
 PRINCIPAL_A = 15_000

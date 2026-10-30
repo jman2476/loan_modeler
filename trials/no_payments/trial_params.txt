@@ -4,4 +4,4 @@ Tuple: (0, 0, 0, 'no_payments')
 Loan A: principal=$15,000  rate=5.0%  monthly_payment=$0.00
 Loan B: principal=$10,000  rate=5.0%  monthly_payment=$0.00
 Loan C: principal=$10,000  rate=9.0%  monthly_payment=$0.00
-Term:   10.0 years
+Term:   20.0 years
